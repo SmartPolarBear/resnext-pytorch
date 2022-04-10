@@ -44,7 +44,7 @@ class resnext(nn.Module):
         out = self.conv5(out)
         out = functional.avg_pool2d(out, 7)
         out = out.view(out.size(0), -1)
-        out = functional.softmax(self.fc(out))
+        out = self.fc(out)
         return out
 
 
